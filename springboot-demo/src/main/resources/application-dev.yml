@@ -1,0 +1,15 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=CTT&useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+  liquibase:
+    change-log: classpath:/db.changelog/db.changelog-master.xml
+    # 开启 liquibase
+    enabled: true
+
+mybatis:
+  mapper-locations: classpath:com.icss.etc/mapper/*Mapper.xml
+  type-aliases-package: com.icss.etc.pojo  #在配置了这句，我们在mapper.xml映射文件中不需要写出实体类的完整路径，只需要写出类名即可
