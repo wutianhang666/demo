@@ -16,9 +16,14 @@ public class User {
     private String id;
 
     @ApiModelProperty(value = "用户姓名")
-    private String username;
+    private String userName;
 
     @ApiModelProperty(value = "用户密码")
-    private String password;
+    private String passWord;
 
+    @ApiModelProperty(value = "性别")
+    private String sex;
+
+    @ApiModelProperty(value = "电话")
+    private String phone;
 }

@@ -16,7 +16,7 @@ public class TestSwaggerController {
     @ApiOperation(value = "根据用户唯一标识获取用户信息")
     public User getUserInfo() {
         // 模拟数据库中根据id获取User信息
-        User user = new User("111", "张三", "123456");
+        User user = new User("111", "张三", "123456", "男","15998000000");
         return user;
     }
 }
