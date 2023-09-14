@@ -1,6 +1,6 @@
 package com.icss.etc.controller;
 
-import com.icss.etc.Pojo.User;
+import com.icss.etc.pojo.User;
 import com.icss.etc.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,11 +20,11 @@ public class UserController {
     @GetMapping("/addUser")
     @ApiOperation(value = "新增用户")
     public int addUser(User user){
-        user.setId("1");
-        user.setUserName("张三");
-        user.setPassWord("123456");
-        user.setSex("男");
-        user.setPhone("5757262");
+//        user.setId("1");
+//        user.setUserName("张三");
+//        user.setPassWord("123456");
+//        user.setSex("男");
+//        user.setPhone("5757262");
         
         return userService.addUser(user);
     }

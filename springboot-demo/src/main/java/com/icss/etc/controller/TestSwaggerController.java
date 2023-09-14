@@ -1,6 +1,6 @@
 package com.icss.etc.controller;
 
-import com.icss.etc.Pojo.User;
+import com.icss.etc.pojo.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;

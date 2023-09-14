@@ -1,4 +1,4 @@
-package com.icss.etc.Pojo;
+package com.icss.etc.pojo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

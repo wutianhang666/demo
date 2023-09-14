@@ -1,11 +1,11 @@
 package com.icss.etc.service;
 
-import com.icss.etc.Pojo.User;
+import com.icss.etc.pojo.User;
 import com.icss.etc.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class UserServiceImpl implements UserService{
 
     @Autowired

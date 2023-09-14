@@ -1,7 +1,6 @@
 package com.icss.etc.service;
 
-import com.icss.etc.Pojo.User;
-import org.springframework.stereotype.Service;
+import com.icss.etc.pojo.User;
 
 public interface UserService {
     

@@ -3,7 +3,7 @@
 <mapper namespace="com.icss.etc.mapper.UserMapper">
     
     <insert id="addUser" parameterType="com.icss.etc.pojo.User">
-        insert into User(id, userName ,passWard, sex, phone) values (#{id}, #{userName}, #{passWard}, #{sex}, #{phone});
+        insert into User(id, user_Name,pass_Word, sex, phone) values (#{id}, #{userName}, #{passWord}, #{sex}, #{phone});
     </insert>
     
     

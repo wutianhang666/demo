@@ -11,5 +11,7 @@ spring:
     enabled: true
 
 mybatis:
-  mapper-locations: classpath:com.icss.etc/mapper/*Mapper.xml
+  mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.icss.etc.pojo  #在配置了这句，我们在mapper.xml映射文件中不需要写出实体类的完整路径，只需要写出类名即可
+  configuration:
+    map-underscore-to-camel-case: true
