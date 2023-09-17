@@ -15,3 +15,8 @@ mybatis:
   type-aliases-package: com.icss.etc.pojo  #在配置了这句，我们在mapper.xml映射文件中不需要写出实体类的完整路径，只需要写出类名即可
   configuration:
     map-underscore-to-camel-case: true
+#
+#logging:
+#  config: logback.xml
+#  level:
+#    com.icss.etc: trace

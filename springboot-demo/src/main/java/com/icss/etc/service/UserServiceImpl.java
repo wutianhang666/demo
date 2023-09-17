@@ -5,6 +5,8 @@ import com.icss.etc.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService{
 
@@ -13,5 +15,9 @@ public class UserServiceImpl implements UserService{
     
     public int addUser(User user) {
         return userMapper.addUser(user);
+    }
+
+    public List<User> userList() {
+        return userMapper.userList();
     }
 }
