@@ -1,7 +1,6 @@
 package com.icss.etc;
 
 import org.mybatis.spring.annotation.MapperScan;
-import org.mybatis.spring.annotation.MapperScans;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,5 +14,6 @@ public class SpringbootApplication {
         ApplicationContext ctx = SpringApplication.run(SpringbootApplication.class, args);
         String[] beanNames = ctx.getBeanDefinitionNames();
         System.out.println("所有beanNames个数：" + beanNames.length);
+        System.out.println("启动成功");
     }
 }

@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     
-    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+    private static Logger logger = LoggerFactory.getLogger(UserController.class);
     
     @Autowired
     private UserService userService;
@@ -24,7 +24,10 @@ public class UserController {
     @GetMapping
     @ApiOperation(value = "查询所有用户")
     public List<User> userList(){
-        return userService.userList();
+        logger.info("查询所有用户");
+        List<User> list = userService.userList();
+        logger.info("查询结果" + list.toString());
+        return list;
     }
     
     @PutMapping("/addUser")
