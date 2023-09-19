@@ -1,12 +1,13 @@
-package com.icss.etc.service;
+package com.icss.etc.service.impl;
 
+import com.icss.etc.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RedisServiceImpl implements RedisService{
+public class RedisServiceImpl implements RedisService {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
