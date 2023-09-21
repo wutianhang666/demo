@@ -13,14 +13,14 @@ public class MqMessageServiceImpl implements MqMessageService {
 
     @Override
     public void sendMessage(String message) {
-        System.out.println("等待发送的信息为：" + message);
         jmsMessagingTemplate.convertAndSend("order.queue.message",message);
+        System.out.println("---发送消息成功");
     }
 
     @Override
     public String doMessage() {
         String message = jmsMessagingTemplate.receiveAndConvert("order.queue.message",String.class);
-        System.out.println("已经接收到信息：" + message);
+        System.out.println("***已经接收到信息：" + message);
         return message;
     }
 }
