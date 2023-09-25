@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@Api(value = "用户管理", description = "用户管理")
+@Api(value = "Redis功能测试", description = "Redis功能测试")
 @RequestMapping("/user")
 public class RedisController {
 
