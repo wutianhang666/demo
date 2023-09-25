@@ -1,5 +1,6 @@
 package com.icss.etc.controller;
 
+import com.icss.etc.common.BaseResult;
 import com.icss.etc.pojo.User;
 import com.icss.etc.service.UserService;
 import io.swagger.annotations.Api;
@@ -23,11 +24,11 @@ public class UserController {
     
     @GetMapping
     @ApiOperation(value = "查询所有用户")
-    public List<User> userList(){
+    public BaseResult userList(){
         logger.info("查询所有用户");
         List<User> list = userService.userList();
         logger.info("查询结果" + list.toString());
-        return list;
+        return BaseResult.success(list);
     }
     
     @PutMapping("/addUser")
