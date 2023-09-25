@@ -5,7 +5,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +19,9 @@ import java.util.concurrent.CountDownLatch;
 @RestController
 @Api(value = "activeMQ消息队列测试", description = "activeMQ消息队列测试")
 @RequestMapping("/mq")
-public class ActiveMqTestController {
+public class TestActiveMqController {
 
-    private static Logger logger = LoggerFactory.getLogger(ActiveMqTestController.class);
+    private static Logger logger = LoggerFactory.getLogger(TestActiveMqController.class);
 
     @Autowired
     private MqMessageService mqMessageService;

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/swagger")
-@Api(value = "测试Swagger2在线接口文档")
+@Api(value = "测试Swagger2在线接口文档", description = "测试Swagger2在线接口文档")
 public class TestSwaggerController {
 
     @GetMapping()

@@ -14,9 +14,9 @@ public class MyInterceptorConfig extends WebMvcConfigurationSupport {
 
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
-        //拦截所有url
+        //拦截url路径
         registry.addInterceptor(new MyInterceptor())
-                .addPathPatterns("/**");
+                .addPathPatterns("/testInterceptors/**");
         super.addInterceptors(registry);
     }
 
