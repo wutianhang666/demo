@@ -1,7 +1,6 @@
 package com.icss.etc.test;
 
-public class synchronizedTest implements Runnable {
-
+public class SynchronizedTest implements Runnable{
     static int count;
 
     public synchronized void add() {
@@ -17,7 +16,7 @@ public class synchronizedTest implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        synchronizedTest syncDemo = new synchronizedTest();
+        SynchronizedTest syncDemo = new SynchronizedTest();
 
         Thread t1 = new Thread(syncDemo);
         Thread t2 = new Thread(syncDemo);
