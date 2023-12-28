@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class AopProxyConfig {
 
     /**
-     * @Pointcut 注解指定一个切面，定义需要拦截的东西，这里介绍两个常用的表达式：
+     * @Pointcut 注解指定一个切面，定义需要拦截的东西，这里介绍两个常用的表达式：  切入点
      * 一个是使用 execution()，
      * 切入点，制定 com.icss.etc.controller.TestAopController 类下的所有方法
      * (..)表示任何参数都可以
