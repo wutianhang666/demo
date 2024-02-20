@@ -33,6 +33,12 @@ spring:
       # 如果此处设置为true，需要添加activemq-pool的依赖包，否则会自动配置失败，无法注入JmsMessagingTemplate
       enabled: false
 
+  #邮件配置
+  mail:
+    host: smtp.qq.com #仅用于发送邮件
+    username: 1137345252@qq.com
+    password: mumoqughiecrjbgh #不是qq邮箱密码，是授权码
+
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.icss.etc.pojo  #在配置了这句，我们在mapper.xml映射文件中不需要写出实体类的完整路径，只需要写出类名即可
