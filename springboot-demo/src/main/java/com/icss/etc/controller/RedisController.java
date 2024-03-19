@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.ListOperations;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +27,10 @@ public class RedisController {
     private RedisService redisService;
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
+
+    //经过配置类处理过的redisTemplate
+    @Autowired
+    private RedisTemplate<String, Object> redisTemplate;
 
     @GetMapping(value = "/setString/{key}/{value}")
     @ApiOperation(value = "restful风格传参测试Redis存数据")
@@ -85,5 +90,25 @@ public class RedisController {
 
         List<String> list = stringRedisTemplate.opsForList().range("list", 0, -1);
         logger.info("取出的list " + list);
+    }
+
+//===========redisTemplate经过RedisConfig配置文件后，更方便的使用=============================================================================
+
+    @GetMapping(value = "/setString2")
+    @ApiOperation(value = "测试Redis存数据2")
+    public String setString2(@RequestParam(value = "key", required = false) String key,
+                             @RequestParam(value = "value", required = false) String value) {
+        logger.info("测试Redis存数据", key, value);
+        logger.info(value);
+        redisTemplate.opsForValue().set(key, value);
+        return "成功";
+    }
+
+    @GetMapping(value = "/setPojo2")
+    @ApiOperation(value = "测试Redis存对象2")
+    public String setPojo2() {
+        User user = new User("1", "zhangsan2", "111222", "nv", "15998777777");
+        redisTemplate.opsForValue().set("user", user);
+        return "成功";
     }
 }
