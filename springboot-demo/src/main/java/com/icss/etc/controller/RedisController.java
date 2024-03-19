@@ -5,7 +5,6 @@ import com.icss.etc.pojo.User;
 import com.icss.etc.service.RedisService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +13,7 @@ import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
+import redis.clients.jedis.Jedis;
 
 import java.util.List;
 
@@ -117,15 +117,30 @@ public class RedisController {
 
     @GetMapping(value = "/getJiShu")
     @ApiOperation(value = "计数器")
-    public void getJiShu(){
+    public void getJiShu() {
         //key是否存在
         Boolean flag = redisTemplate.hasKey("aa");
-        if (flag){
+        if (flag) {
             redisTemplate.opsForValue().increment("aa", 1);//+1
             Object count = redisTemplate.opsForValue().get("aa");
             System.out.println("当前值：" + count);
         } else {
             redisTemplate.opsForValue().set("aa", 0);
         }
+    }
+
+    //=======================Jedis===================================================================
+
+    @GetMapping(value = "/testJedis")
+    @ApiOperation(value = "测试使用Jedis操作Redis")
+    public void testJedis() {
+
+        Jedis jedis = new Jedis("localhost", 6379);
+        jedis.auth("123456");
+        String ping = jedis.ping();
+        System.out.println(ping);
+
+        jedis.set("name", "xiaotian666");
+        System.out.println(jedis.get("name"));
     }
 }
