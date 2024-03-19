@@ -10,8 +10,8 @@ public class ScheduledTaskController {
     //使用 @Scheduled 注解来指定定时任务的执行时间，方法里是执行逻辑
     //注意cron表达式的用法；
     //0/2 * * * * ?  每隔2秒执行一次
-    @Scheduled(cron = "0/2 * * * * ?")
-    public void myTask(){
+//    @Scheduled(cron = "0/2 * * * * ?")
+    public void myTask() {
         System.out.println("hello.....");
     }
 }
