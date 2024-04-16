@@ -16,8 +16,9 @@ import java.lang.reflect.Field;
 import java.util.List;
 
 @RestController
+//@CrossOrigin
 @Api(value = "用户管理", description = "用户管理")
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     private static Logger logger = LoggerFactory.getLogger(UserController.class);
