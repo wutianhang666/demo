@@ -1,6 +1,6 @@
 package com.icss.etc.service.impl;
 
-import com.icss.etc.service.RedisService;
+import com.icss.etc.service.TestRedisService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +9,9 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RedisServiceImpl implements RedisService {
+public class TestRedisServiceImpl implements TestRedisService {
 
-    private static Logger logger = LoggerFactory.getLogger(RedisServiceImpl.class);
+    private static Logger logger = LoggerFactory.getLogger(TestRedisServiceImpl.class);
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;

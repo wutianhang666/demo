@@ -1,6 +1,6 @@
 package com.icss.etc.controller;
 
-import com.icss.etc.service.AopService;
+import com.icss.etc.service.TestAopService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestAopController {
 
     @Autowired
-    private AopService aopService;
+    private TestAopService aopService;
 
     @GetMapping("/testAop")
     public void testAop(){

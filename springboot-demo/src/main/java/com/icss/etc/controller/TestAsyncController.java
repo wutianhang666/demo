@@ -1,6 +1,6 @@
 package com.icss.etc.controller;
 
-import com.icss.etc.service.AsyncService;
+import com.icss.etc.service.TestAsyncService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Api(value = "异步功能测试")
 @RequestMapping("/async")
-public class AsyncController {
+public class TestAsyncController {
 
     @Autowired
-    private AsyncService asyncService;
+    private TestAsyncService asyncService;
 
     @GetMapping("/async")
     @ApiOperation(value = "测试异步执行")
