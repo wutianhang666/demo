@@ -1,6 +1,6 @@
 package com.icss.etc.controller;
 
-import com.icss.etc.service.SendMailService;
+import com.icss.etc.service.TestSendMailService;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestSendMailController {
 
     @Autowired
-    private SendMailService sendMailService;
+    private TestSendMailService sendMailService;
 
     @GetMapping("/send")
     public Object sendMail() {

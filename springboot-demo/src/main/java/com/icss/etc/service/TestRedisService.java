@@ -1,6 +1,6 @@
 package com.icss.etc.service;
 
-public interface RedisService {
+public interface TestRedisService {
 
     public String setString(String key, String value);
 

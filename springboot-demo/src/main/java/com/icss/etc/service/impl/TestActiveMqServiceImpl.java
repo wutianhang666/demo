@@ -1,12 +1,12 @@
 package com.icss.etc.service.impl;
 
-import com.icss.etc.service.MqMessageService;
+import com.icss.etc.service.TestActiveMqService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MqMessageServiceImpl implements MqMessageService {
+public class TestActiveMqServiceImpl implements TestActiveMqService {
 
     @Autowired(required = false)
     private JmsMessagingTemplate jmsMessagingTemplate;

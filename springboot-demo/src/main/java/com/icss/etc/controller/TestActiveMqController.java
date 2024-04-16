@@ -1,6 +1,6 @@
 package com.icss.etc.controller;
 
-import com.icss.etc.service.MqMessageService;
+import com.icss.etc.service.TestActiveMqService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -25,7 +25,7 @@ public class TestActiveMqController {
     private static Logger logger = LoggerFactory.getLogger(TestActiveMqController.class);
 
     @Autowired
-    private MqMessageService mqMessageService;
+    private TestActiveMqService mqMessageService;
 
     public static final String MQ_BROKER_URL = "tcp://127.0.0.1:61616";
     public static final String QUEUE_NAME = "xiaoTian";

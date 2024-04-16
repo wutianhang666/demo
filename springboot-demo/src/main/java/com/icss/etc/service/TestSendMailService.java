@@ -1,7 +1,7 @@
 package com.icss.etc.service;
 
 
-public interface SendMailService {
+public interface TestSendMailService {
 
     public Object testSendMail();
 }

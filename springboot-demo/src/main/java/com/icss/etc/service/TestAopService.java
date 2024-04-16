@@ -1,6 +1,6 @@
 package com.icss.etc.service;
 
-public interface AopService {
+public interface TestAopService {
 
     public void testAop();
 }
