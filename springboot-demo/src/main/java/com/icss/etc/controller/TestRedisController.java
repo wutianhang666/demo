@@ -2,7 +2,8 @@ package com.icss.etc.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.icss.etc.pojo.User;
-import com.icss.etc.service.RedisService;
+import com.icss.etc.service.TestRedisService;
+import com.icss.etc.utils.RedisUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
