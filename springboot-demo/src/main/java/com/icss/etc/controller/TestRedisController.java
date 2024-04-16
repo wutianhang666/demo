@@ -2,7 +2,7 @@ package com.icss.etc.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.icss.etc.pojo.User;
-import com.icss.etc.service.RedisService;
+import com.icss.etc.service.TestRedisService;
 import com.icss.etc.utils.RedisUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -21,12 +21,12 @@ import java.util.List;
 @RestController
 @Api(value = "Redis功能测试", description = "Redis功能测试")
 @RequestMapping("/user")
-public class RedisController {
+public class TestRedisController {
 
-    private static Logger logger = LoggerFactory.getLogger(RedisController.class);
+    private static Logger logger = LoggerFactory.getLogger(TestRedisController.class);
 
     @Autowired
-    private RedisService redisService;
+    private TestRedisService redisService;
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
