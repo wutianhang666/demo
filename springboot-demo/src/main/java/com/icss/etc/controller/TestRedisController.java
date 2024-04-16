@@ -2,7 +2,7 @@ package com.icss.etc.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.icss.etc.pojo.User;
-import com.icss.etc.service.TestRedisService;
+import com.icss.etc.service.RedisService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
@@ -32,6 +32,8 @@ public class TestRedisController {
     //经过配置类处理过的redisTemplate
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
+    @Autowired
+    private RedisUtil redisUtil;
 
     @GetMapping(value = "/setString/{key}/{value}")
     @ApiOperation(value = "restful风格传参测试Redis存数据")
@@ -110,6 +112,10 @@ public class TestRedisController {
     public String setPojo2() {
         User user = new User("1", "zhangsan2", "111222", "nv", "15998777777");
         redisTemplate.opsForValue().set("user", user);
+
+        System.out.println("存入成功");
+        System.out.println(redisTemplate.opsForValue().get("user"));
+        ;
         return "成功";
     }
 
@@ -143,4 +149,16 @@ public class TestRedisController {
         jedis.set("name", "xiaotian666");
         System.out.println(jedis.get("name"));
     }
+
+    //===============使用redis工具类操作================================================
+
+    @GetMapping(value = "/testUtils/{name}")
+    @ApiOperation(value = "测试使用自定义redis工具类，判断键是否存在")
+    public Object testUtils(@PathVariable(value = "name") String name) {
+
+        boolean b = redisUtil.hasKey(name);
+        System.out.println(b);
+        return b;
+    }
+
 }
