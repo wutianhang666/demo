@@ -1,14 +1,14 @@
 package com.icss.etc.service.impl;
 
 import com.icss.etc.common.BaseResult;
-import com.icss.etc.service.SendMailService;
+import com.icss.etc.service.TestSendMailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SendMailServiceImpl implements SendMailService {
+public class TestSendMailServiceImpl implements TestSendMailService {
 
     @Autowired
     private JavaMailSender javaMailSender;

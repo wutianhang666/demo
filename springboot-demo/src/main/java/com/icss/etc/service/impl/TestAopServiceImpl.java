@@ -1,10 +1,10 @@
 package com.icss.etc.service.impl;
 
-import com.icss.etc.service.AopService;
+import com.icss.etc.service.TestAopService;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AopServiceImpl implements AopService {
+public class TestAopServiceImpl implements TestAopService {
 
     @Override
     public void testAop() {

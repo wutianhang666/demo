@@ -1,6 +1,6 @@
 package com.icss.etc.service;
 
-public interface MqMessageService {
+public interface TestActiveMqService {
 
     void sendMessage(String message);
 

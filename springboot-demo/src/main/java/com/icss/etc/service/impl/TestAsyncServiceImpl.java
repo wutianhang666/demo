@@ -1,11 +1,11 @@
 package com.icss.etc.service.impl;
 
-import com.icss.etc.service.AsyncService;
+import com.icss.etc.service.TestAsyncService;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AsyncServiceImpl implements AsyncService {
+public class TestAsyncServiceImpl implements TestAsyncService {
 
     /**
      * @Async注解的方法，称之为异步方法，该方法会在执行时，会单独开启一个线程来执行
