@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/sysMenu")
 @Api(value = "菜单管理", description = "菜单管理")
 public class SysMenuController {
@@ -35,6 +36,14 @@ public class SysMenuController {
     @ApiOperation("新增菜单")
     public Object add(@RequestBody SysMenu sysMenu) {
         boolean insert = sysMenuService.insert(sysMenu);
+        return BaseResult.success(insert);
+    }
+
+    //增加菜单
+    @PutMapping
+    @ApiOperation("更新菜单")
+    public Object update(@RequestBody SysMenu sysMenu) {
+        boolean insert = sysMenuService.updateById(sysMenu);
         return BaseResult.success(insert);
     }
 

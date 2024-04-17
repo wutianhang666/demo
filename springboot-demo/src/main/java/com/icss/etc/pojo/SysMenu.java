@@ -36,9 +36,10 @@ public class SysMenu {
     @TableField(value = "PARENT_ID")
     private Integer parentId;
 
-    @TableField(value = "PAGE_PATH")//这样处理的主要目的是java对带有下划线的字段不识别，所以改为驼峰形式
+    //这样处理的主要目的是java对带有下划线的字段不识别，所以改为驼峰形式
+    @TableField(value = "PAGE_PATH")
     private String pagePath;
 
-    @TableField(value = "SORT")//这样处理的主要目的是java对带有下划线的字段不识别，所以改为驼峰形式
+    @TableField(value = "SORT")
     private Integer sort;
 }
