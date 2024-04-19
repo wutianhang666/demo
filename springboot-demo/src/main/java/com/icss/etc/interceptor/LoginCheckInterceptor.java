@@ -46,7 +46,7 @@ public class LoginCheckInterceptor implements HandlerInterceptor {
 
         //5.解析token，如果解析失败，返回错误结果（未登录）
         try {
-            JWTUtil.getUsername(token);
+            JWTUtil.verifyToken(token);
         } catch (Exception e) {
             log.info("令牌解析失败！");
 
