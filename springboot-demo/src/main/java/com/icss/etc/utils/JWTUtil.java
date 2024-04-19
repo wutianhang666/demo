@@ -3,11 +3,8 @@ package com.icss.etc.utils;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTDecodeException;
-import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.icss.etc.pojo.SysUser;
-import com.icss.etc.pojo.User;
 import org.junit.Test;
 
 import java.io.UnsupportedEncodingException;
@@ -77,7 +74,7 @@ public class JWTUtil {
     }
 
     //token有效时长
-    private static final long EXPIRE = 2000L;
+    private static final long EXPIRE = 5 * 60 * 1000l;
     //token的密钥 可自行定义
     private static final String SECRET = "jwt";
 
@@ -116,16 +113,18 @@ public class JWTUtil {
      */
     public static DecodedJWT verifyToken(String token) {
 
-        DecodedJWT jwt = null;
-        try {
-            jwt = JWT.require(Algorithm.HMAC256(SECRET))
-                    .build()
-                    .verify(token);
-        } catch (JWTDecodeException e) {
-            System.out.println("令牌错误");
-        } catch (TokenExpiredException e) {
-            System.out.println("令牌过期");
-        }
+        DecodedJWT jwt = JWT.require(Algorithm.HMAC256(SECRET))
+                .build()
+                .verify(token);;
+//        try {
+//            jwt = JWT.require(Algorithm.HMAC256(SECRET))
+//                    .build()
+//                    .verify(token);
+//        } catch (JWTDecodeException e) {
+//            System.out.println("令牌错误");
+//        } catch (TokenExpiredException e) {
+//            System.out.println("令牌过期");
+//        }
         return jwt;
     }
 

@@ -27,8 +27,12 @@ public class BaseResult<T> implements Serializable {
         return new BaseResult(1, "操作成功", data);
     }
 
-    public static BaseResult failResultCreate(Object data){
-        return new BaseResult(0, "操作失败", null);
+    public static BaseResult failResultCreate(String message){
+        return new BaseResult(0, message, null);
+    }
+
+    public static BaseResult failResultCreate(String message, Object date){
+        return new BaseResult(0, message, date);
     }
 
 }
