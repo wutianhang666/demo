@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.icss.etc.mapper.UserMapper">
-    
+
     <select id="userList" resultType="com.icss.etc.pojo.User">
         select * from user;
     </select>
-    
+
     <insert id="addUser" parameterType="com.icss.etc.pojo.User">
         insert into User(user_Name,pass_Word, sex, phone) values (#{userName}, #{passWord}, #{sex}, #{phone});
     </insert>
-    
-    
+
+
 </mapper>

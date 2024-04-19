@@ -177,8 +177,8 @@ public class TestActiveMqController {
 
         consumer.setMessageListener(message -> {
             System.out.println("--------------------" + message);
-            if(message != null && message instanceof TextMessage) {
-                TextMessage textMessage = (TextMessage)message;
+            if (message != null && message instanceof TextMessage) {
+                TextMessage textMessage = (TextMessage) message;
                 try {
                     System.out.println(textMessage.getText());
                 } catch (JMSException e) {

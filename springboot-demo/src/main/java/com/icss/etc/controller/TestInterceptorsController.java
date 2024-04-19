@@ -17,7 +17,7 @@ public class TestInterceptorsController {
 
     @GetMapping("/test")
     @ApiOperation("测试拦截器")
-    public String test(){
+    public String test() {
         logger.info("测试拦截器方法输出");
         return "test";
     }

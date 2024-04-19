@@ -5,7 +5,7 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.icss.etc.pojo.SysUser;
+import com.icss.etc.pojo.User;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Date;
@@ -19,7 +19,7 @@ public class JWTUtil {
     //token的密钥 可自行定义
     private static final String SECRET = "jwt";
 
-    public static String createToken(SysUser user) throws UnsupportedEncodingException {
+    public static String createToken(User user) throws UnsupportedEncodingException {
         //token过期时间
         Date date = new Date(System.currentTimeMillis() + EXPIRE);
 
@@ -31,7 +31,7 @@ public class JWTUtil {
         //使用jwt的api生成token
         String token = JWT.create()
                 .withHeader(map)
-                .withClaim("name", user.getName())//私有声明
+                .withClaim("name", user.getUserName())//私有声明
                 .withExpiresAt(date)//过期时间
                 .withIssuedAt(new Date())//签发时间
                 .sign(Algorithm.HMAC256(SECRET));//签名
