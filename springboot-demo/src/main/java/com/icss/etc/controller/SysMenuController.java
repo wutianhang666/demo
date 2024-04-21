@@ -11,7 +11,10 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
@@ -85,6 +88,22 @@ public class SysMenuController {
             wrapper.like("name", name);
         }
         List<SysMenu> list = sysMenuService.selectList(wrapper);
+
+        Set<Integer> parentIds = list.stream().filter(a -> a.getParentId() != null).map(a -> a.getParentId()).collect(Collectors.toSet());
+        List<SysMenu> sysMenus = sysMenuService.selectBatchIds(parentIds);
+        Map<Integer, SysMenu> menuMap = new HashMap<>();
+        if (!sysMenus.isEmpty()) {
+            menuMap = sysMenus.stream().collect(Collectors.toMap(a -> a.getId(), x -> x, (k1, k3) -> k1));
+        }
+        for (SysMenu sysMenu : list) {
+            if (sysMenu.getParentId() != null) {
+                SysMenu menu = menuMap.get(sysMenu.getParentId());
+                if (menu != null) {
+                    sysMenu.setParentName(menu.getName());
+                }
+            }
+        }
+
         // 找出pid为null的一级菜单
         List<SysMenu> parentNodes = list.stream().filter(menu -> menu.getParentId() == null).collect(Collectors.toList());
         //找出一级菜单为null的二级菜单放到Children中
