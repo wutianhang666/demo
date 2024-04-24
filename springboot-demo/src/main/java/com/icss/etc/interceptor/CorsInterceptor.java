@@ -1,18 +1,22 @@
 package com.icss.etc.interceptor;
 
-import javax.servlet.*;
+import org.springframework.web.servlet.HandlerInterceptor;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-public class CorsInterceptor implements Filter {
+/**
+ * 跨域配置CORS
+ */
+public class CorsInterceptor implements HandlerInterceptor {
 
-    //跨域测试，不好用
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-//        HttpServletResponse httpResponse = (HttpServletResponse) response;
-//        httpResponse.setHeader("Access-Control-Allow-Origin", "*"); // 允许所有来源的跨域请求
-//        httpResponse.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS"); // 允许的HTTP方法
-//        httpResponse.setHeader("Access-Control-Allow-Headers", "*"); // 允许的所有请求头
-//        chain.doFilter(request, response);
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        response.setHeader("Access-Control-Allow-Origin", "*");//允许所有域名访问
+        response.setHeader("Access-Control-Allow-Methods", "GET, HEAD, POST, PUT, DELETE, TRACE, OPTIONS, PATCH");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+        //返回true表示继续执行后续的处理流程
+        return true;
     }
 }

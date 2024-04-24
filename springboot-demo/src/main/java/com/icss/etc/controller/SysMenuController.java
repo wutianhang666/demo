@@ -18,7 +18,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
-@CrossOrigin
 @RequestMapping("/sysMenu")
 @Api(value = "菜单管理", description = "菜单管理")
 public class SysMenuController {

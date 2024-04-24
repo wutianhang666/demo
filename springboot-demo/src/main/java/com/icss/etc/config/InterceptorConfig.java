@@ -1,5 +1,6 @@
 package com.icss.etc.config;
 
+import com.icss.etc.interceptor.CorsInterceptor;
 import com.icss.etc.interceptor.LoginCheckInterceptor;
 import com.icss.etc.interceptor.MyInterceptor;
 import org.springframework.context.annotation.Configuration;
@@ -25,6 +26,11 @@ public class InterceptorConfig extends WebMvcConfigurationSupport {
         registry.addInterceptor(new LoginCheckInterceptor())
                 .addPathPatterns("")
                 .excludePathPatterns("/sys/login");
+
+        //拦截器添加跨域处理
+        registry.addInterceptor(new CorsInterceptor())
+                .addPathPatterns("/**");
+
         super.addInterceptors(registry);
     }
 

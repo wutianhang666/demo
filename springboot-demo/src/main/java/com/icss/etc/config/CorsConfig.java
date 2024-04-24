@@ -21,16 +21,16 @@ public class CorsConfig {
 //                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // 允许的HTTP方法
 //                .allowedHeaders("*"); // 允许的所有请求头
 //    }
-      @Bean
-      public CorsWebFilter corsWebFilter(){
-          UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-          CorsConfiguration corsConfiguration = new CorsConfiguration();
-          corsConfiguration.setAllowedHeaders(Arrays.asList(new String("*")));
-          corsConfiguration.setAllowedMethods(Arrays.asList(new String("*")));
-          corsConfiguration.addAllowedOrigin("*");
-          corsConfiguration.setAllowCredentials(true);
-
-          source.registerCorsConfiguration("/**",corsConfiguration);
-          return new CorsWebFilter(source);
-      }
+//      @Bean
+//      public CorsWebFilter corsWebFilter(){
+//          UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//          CorsConfiguration corsConfiguration = new CorsConfiguration();
+//          corsConfiguration.setAllowedHeaders(Arrays.asList(new String("*")));
+//          corsConfiguration.setAllowedMethods(Arrays.asList(new String("*")));
+//          corsConfiguration.addAllowedOrigin("*");
+//          corsConfiguration.setAllowCredentials(true);
+//
+//          source.registerCorsConfiguration("/**",corsConfiguration);
+//          return new CorsWebFilter(source);
+//      }
 }
