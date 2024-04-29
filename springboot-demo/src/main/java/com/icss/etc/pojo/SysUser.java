@@ -5,18 +5,40 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import java.util.List;
+import java.util.Date;
 
 @Data
-//可以使用 @TableName 表名注解指定当前实体类对应的表名，比如下面 Menu 实体类对应表名为 sys_menu
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+//可以使用 @TableName 表名注解指定当前实体类对应的表名，比如下面 SysUser 实体类对应表名为 SYS_USER
 @TableName(value = "SYS_USER")
 public class SysUser {
 
     //可以使用 @TableId 注解（标注在主键上）和 @TableField 注解（标注在其他成员属性上）来指定对应的字段名
     @TableId(value = "ID", type = IdType.AUTO)
     private Integer id;
+
+    @ApiModelProperty(value = "创建者")
+    @TableField(value = "CREATE_BY")
+    protected String createBy;
+
+    @ApiModelProperty(value = "创建时间")
+    @TableField(value = "CREATE_DATE")
+    protected Date createDate;
+
+    @ApiModelProperty(value = "更新者")
+    @TableField(value = "UPDATE_BY")
+    protected String updateBy;
+
+    @ApiModelProperty(value = "更新时间")
+    @TableField(value = "UPDATE_DATE")
+    protected Date updateDate;
 
     @ApiModelProperty(value = "姓名")
     @TableField(value = "NAME")
