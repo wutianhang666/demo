@@ -16,9 +16,14 @@ public class TestAsyncController {
     @Autowired
     private TestAsyncService asyncService;
 
+    /**
+     * 测试用spring的@Async实现异步执行
+     *
+     * @return
+     */
     @GetMapping("/async")
-    @ApiOperation(value = "测试异步执行")
-    public String async(){
+    @ApiOperation(value = "测试用spring的@Async实现异步执行")
+    public String async() {
         asyncService.testAsync();
 
         System.out.println("开启异步执行");
